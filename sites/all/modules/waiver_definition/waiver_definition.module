@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Waiver definition feature.
+ */
+
+include_once 'waiver_definition.features.inc';
