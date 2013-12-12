@@ -7,6 +7,28 @@
  * @see https://drupal.org/node/1728096
  */
 
+/**
+ * Implements hook_theme().
+ */
+function digital_waiver_theme($existing, $type, $theme, $path) {
+  $base = array(
+    'render element' => 'form',
+    'path' => drupal_get_path('theme', 'digital_waiver') . '/templates/forms',
+  );
+  return array(
+    'waiver_form_new_waiver_form' => $base + array(
+      'template' => 'waiver_form_new_waiver_form',
+    ),
+  );
+}
+/**
+ * Preprocessor for commerce_checkout_form_checkout theme.
+ */
+function digital_waiver_preprocess_waiver_form_new_waiver_form(&$variables) {
+  /* Add or modify your variables */
+  dpm('waiver_form_preprocess');
+  dpm($variables);
+}
 
 /**
  * Override or insert variables into the maintenance page template.

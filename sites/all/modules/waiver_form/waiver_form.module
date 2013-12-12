@@ -18,16 +18,19 @@ function waiver_form_block_view($delta = '') {
   switch ($delta) {
     case 'waiver':
       $block['subject'] = t('Protect your business by waiver');
-      $block['content'] = drupal_get_form('_waiver_form_new_waiver_form');
+      $block['content'] = drupal_get_form('waiver_form_new_waiver_form');
       break;
   }
   return $block;
 }
 
+function waiver_form_form_alter(&$form, &$form_state, $form_id) {
+}
+
 /**
  * Define a form for creating new waiver content type.
  */
-function _waiver_form_new_waiver_form($form, &$form_state) {
+function waiver_form_new_waiver_form($form, &$form_state) {
   // Waiver name field.
   // TODO make this field appear only if the context is empty.
 
@@ -35,9 +38,8 @@ function _waiver_form_new_waiver_form($form, &$form_state) {
     if(empty($node)) {
       return array();
     }
-    
+    dpm('waiver node');
     dpm($node);
-    dpm('noam');
     $form['#prefix'] = $node->body['und'][0]['value'];
     $form['waiver_name'] = array(
     '#type' => 'textfield',
@@ -81,7 +83,7 @@ function _waiver_form_new_waiver_form($form, &$form_state) {
  * automatically call when the submit button is pressed.
  */
 
-function _waiver_form_new_waiver_form_validate($form, &$form_state) {
+function waiver_form_new_waiver_form_validate($form, &$form_state) {
 
   $waiver_name = $form_state['values']['waiver_name'];
 
@@ -96,7 +98,7 @@ function _waiver_form_new_waiver_form_validate($form, &$form_state) {
  * automatically call when submit is pressed (and all validators pass)
  */
 
-function _waiver_form_new_waiver_form_submit($form, &$form_state) {
+function waiver_form_new_waiver_form_submit($form, &$form_state) {
   
 }
 
