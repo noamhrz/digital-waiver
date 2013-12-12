@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * Declaring the block.
+ */
+function waiver_form_block_info() {
+  $blocks['waiver'] = array(
+    'info' => t('Conntext block'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implementation of hook_block_view().
+ */
+function waiver_form_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'waiver':
+      $block['subject'] = t('Protect your business by waiver');
+      $block['content'] = drupal_get_form('_waiver_form_new_waiver_form');
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Define a form for creating new waiver content type.
+ */
+function _waiver_form_new_waiver_form($form, &$form_state) {
+  // Waiver name field.
+  // TODO make this field appear only if the context is empty.
+
+    $node = node_load(arg(1)); // You have to set the node load to a variable.
+    if(empty($node)) {
+      return array();
+    }
+    
+    dpm($node);
+    dpm('noam');
+    $form['#prefix'] = $node->body['und'][0]['value'];
+    $form['waiver_name'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => t("Your new Waiver name"),
+    '#description' => t('Must be a unique name'),
+    '#value' => t($node->title),
+    );
+
+      
+  $form['date'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('My Date'),
+  );
+    // Waiver statement field
+    $form['statement'] = array(
+    '#type' => 'textarea',
+    '#required' => TRUE,
+    '#title' => t("Your statement for the waiver"),
+    '#description' => t('what your customer will sign about'),
+    );
+    
+    $form['signature'] = array(
+    '#title' => 'Signature',
+    '#type' => 'signaturefield',
+    '#color' => '#0f0',
+    '#required' => TRUE,
+    );
+
+    $form['submit'] = array(
+    '#type' => 'submit',
+    // #value is the text to display inside the button
+    '#value' => t('Submit'),
+    );
+
+  return $form;
+}
+
+/*
+ * Define a validation function that drupal will
+ * automatically call when the submit button is pressed.
+ */
+
+function _waiver_form_new_waiver_form_validate($form, &$form_state) {
+
+  $waiver_name = $form_state['values']['waiver_name'];
+
+  // Check if the content type name is already exists.
+  if (in_array('waiver_' . $waiver_name, node_type_get_names())) {
+    form_set_error('waiver_name', $waiver_name . ' ' . t('Is already exists'));
+  }
+}
+
+/*
+ * Define a submit funciton that drupal will
+ * automatically call when submit is pressed (and all validators pass)
+ */
+
+function _waiver_form_new_waiver_form_submit($form, &$form_state) {
+  
+}
+
+
+  

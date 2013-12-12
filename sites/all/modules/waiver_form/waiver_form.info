@@ -1,0 +1,13 @@
+name = Waiver form
+description = the form the athlete will sign as a block
+core = 7.x
+
+package = "custom stuff"
+dependencies[] = ctools
+dependencies[] = views
+dependencies[] = less
+dependencies[] = signaturefield
+dependencies[] = date
+dependencies[] = waiver_definition
+
+stylesheets[all][] = waiver_form.css.less
