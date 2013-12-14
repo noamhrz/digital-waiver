@@ -19,12 +19,22 @@ function digital_waiver_theme($existing, $type, $theme, $path) {
     'waiver_form_new_waiver_form' => $base + array(
       'template' => 'waiver_form_new_waiver_form',
     ),
+    'waiver_definition_node_form' => $base + array(
+      'template' => 'waiver_definition_node_form',
+    ),
   );
 }
+
 /**
  * Preprocessor for commerce_checkout_form_checkout theme.
  */
 function digital_waiver_preprocess_waiver_form_new_waiver_form(&$variables) {
+  /* Add or modify your variables */
+  dpm('waiver_form_preprocess');
+  dpm($variables);
+}
+
+function digital_waiver_preprocess_waiver_definition_node_form(&$variables) {
   /* Add or modify your variables */
   dpm('waiver_form_preprocess');
   dpm($variables);

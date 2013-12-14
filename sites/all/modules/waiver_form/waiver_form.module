@@ -10,6 +10,8 @@ function waiver_form_block_info() {
   return $blocks;
 }
 
+
+
 /**
  * Implementation of hook_block_view().
  */
@@ -25,6 +27,8 @@ function waiver_form_block_view($delta = '') {
 }
 
 function waiver_form_form_alter(&$form, &$form_state, $form_id) {
+  //dpm($form_id);  // print form ID to messages
+  //dpm($form);  // pretty print array using Krumo to messages
 }
 
 /**

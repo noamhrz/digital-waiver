@@ -18,7 +18,7 @@ function waiver_definition_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function waiver_definition_node_info() {
   $items = array(
-    'weiver_definition' => array(
+    'waiver_definition' => array(
       'name' => t('Waiver definition'),
       'base' => 'node_content',
       'description' => t('The definitions of the waiver'),

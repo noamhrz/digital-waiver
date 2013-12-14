@@ -10,9 +10,9 @@
 function waiver_definition_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-weiver_definition-body'
-  $field_instances['node-weiver_definition-body'] = array(
-    'bundle' => 'weiver_definition',
+  // Exported field_instance: 'node-waiver_definition-body'
+  $field_instances['node-waiver_definition-body'] = array(
+    'bundle' => 'waiver_definition',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'the statement your athlete is about to sign',
@@ -62,54 +62,14 @@ function waiver_definition_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-weiver_definition-field_birth_date_column'
-  $field_instances['node-weiver_definition-field_birth_date_column'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 10,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+  // Exported field_instance: 'node-waiver_definition-field_birth_date_row'
+  $field_instances['node-waiver_definition-field_birth_date_row'] = array(
+    'bundle' => 'waiver_definition',
+    'default_value' => array(
+      0 => array(
+        'value' => 3,
       ),
     ),
-    'entity_type' => 'node',
-    'field_name' => 'field_birth_date_column',
-    'label' => 'Birth date column',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-weiver_definition-field_birth_date_row'
-  $field_instances['node-weiver_definition-field_birth_date_row'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -150,54 +110,14 @@ function waiver_definition_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-weiver_definition-field_first_name_column'
-  $field_instances['node-weiver_definition-field_first_name_column'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 8,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+  // Exported field_instance: 'node-waiver_definition-field_first_name_row'
+  $field_instances['node-waiver_definition-field_first_name_row'] = array(
+    'bundle' => 'waiver_definition',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
       ),
     ),
-    'entity_type' => 'node',
-    'field_name' => 'field_first_name_column',
-    'label' => 'First name column',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-weiver_definition-field_first_name_row'
-  $field_instances['node-weiver_definition-field_first_name_row'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -238,53 +158,9 @@ function waiver_definition_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-weiver_definition-field_free_field_1_column'
-  $field_instances['node-weiver_definition-field_free_field_1_column'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 13,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_free_field_1_column',
-    'label' => 'Free field 1 column',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 14,
-    ),
-  );
-
-  // Exported field_instance: 'node-weiver_definition-field_free_field_1_label'
-  $field_instances['node-weiver_definition-field_free_field_1_label'] = array(
-    'bundle' => 'weiver_definition',
+  // Exported field_instance: 'node-waiver_definition-field_free_field_1_label'
+  $field_instances['node-waiver_definition-field_free_field_1_label'] = array(
+    'bundle' => 'waiver_definition',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -329,10 +205,14 @@ function waiver_definition_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-weiver_definition-field_free_field_1_row'
-  $field_instances['node-weiver_definition-field_free_field_1_row'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
+  // Exported field_instance: 'node-waiver_definition-field_free_field_1_row'
+  $field_instances['node-waiver_definition-field_free_field_1_row'] = array(
+    'bundle' => 'waiver_definition',
+    'default_value' => array(
+      0 => array(
+        'value' => 6,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -373,54 +253,14 @@ function waiver_definition_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-weiver_definition-field_gender_column'
-  $field_instances['node-weiver_definition-field_gender_column'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 12,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 12,
-      ),
-      'teaser' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+  // Exported field_instance: 'node-waiver_definition-field_gender_row'
+  $field_instances['node-waiver_definition-field_gender_row'] = array(
+    'bundle' => 'waiver_definition',
+    'default_value' => array(
+      0 => array(
+        'value' => 5,
       ),
     ),
-    'entity_type' => 'node',
-    'field_name' => 'field_gender_column',
-    'label' => 'Gender column',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-weiver_definition-field_gender_row'
-  $field_instances['node-weiver_definition-field_gender_row'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -461,54 +301,14 @@ function waiver_definition_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-weiver_definition-field_id_column'
-  $field_instances['node-weiver_definition-field_id_column'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 11,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+  // Exported field_instance: 'node-waiver_definition-field_id_row'
+  $field_instances['node-waiver_definition-field_id_row'] = array(
+    'bundle' => 'waiver_definition',
+    'default_value' => array(
+      0 => array(
+        'value' => 4,
       ),
     ),
-    'entity_type' => 'node',
-    'field_name' => 'field_id_column',
-    'label' => 'ID column',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-weiver_definition-field_id_row'
-  $field_instances['node-weiver_definition-field_id_row'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -549,54 +349,14 @@ function waiver_definition_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-weiver_definition-field_last_name_column'
-  $field_instances['node-weiver_definition-field_last_name_column'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 9,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+  // Exported field_instance: 'node-waiver_definition-field_last_name_row'
+  $field_instances['node-waiver_definition-field_last_name_row'] = array(
+    'bundle' => 'waiver_definition',
+    'default_value' => array(
+      0 => array(
+        'value' => 2,
       ),
     ),
-    'entity_type' => 'node',
-    'field_name' => 'field_last_name_column',
-    'label' => 'Last name column',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-weiver_definition-field_last_name_row'
-  $field_instances['node-weiver_definition-field_last_name_row'] = array(
-    'bundle' => 'weiver_definition',
-    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -639,18 +399,12 @@ function waiver_definition_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Birth date column');
   t('Birth date row');
-  t('First name column');
   t('First name row');
-  t('Free field 1 column');
   t('Free field 1 label');
   t('Free field 1 row');
-  t('Gender column');
   t('Gender row');
-  t('ID column');
   t('ID row');
-  t('Last name column');
   t('Last name row');
   t('Waiver statement');
   t('the statement your athlete is about to sign');
