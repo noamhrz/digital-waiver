@@ -18,6 +18,14 @@ function waiver_definition_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function waiver_definition_node_info() {
   $items = array(
+    'waiver' => array(
+      'name' => t('Waiver'),
+      'base' => 'node_content',
+      'description' => t('The details of an athlete for a specific waiver definition'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'waiver_definition' => array(
       'name' => t('Waiver definition'),
       'base' => 'node_content',
