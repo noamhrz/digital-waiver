@@ -1,8 +1,8 @@
 <?php
   // Render or hide parts of $form: var_export($form);
   // Example given:
-  dpm('template');
-  dpm($form);
+  //dpm('template');
+  //dpm($form);
   
   hide($form['title']);
   print render($form['first']);

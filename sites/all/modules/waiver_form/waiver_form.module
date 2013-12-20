@@ -42,8 +42,8 @@ function waiver_form_new_waiver_form($form, &$form_state) {
     if(empty($node)) {
       return array();
     }
-    dpm('waiver node');
-    dpm($node);
+    //dpm('waiver node');
+    //dpm($node);
     $form['#prefix'] = $node->body['und'][0]['value'];
     $form['waiver_name'] = array(
     '#type' => 'textfield',
