@@ -10,8 +10,6 @@ function waiver_form_block_info() {
   return $blocks;
 }
 
-
-
 /**
  * Implementation of hook_block_view().
  */
@@ -38,46 +36,50 @@ function waiver_form_new_waiver_form($form, &$form_state) {
   // Waiver name field.
   // TODO make this field appear only if the context is empty.
 
-    $node = node_load(arg(1)); // You have to set the node load to a variable.
-    if(empty($node)) {
-      return array();
-    }
-    //dpm('waiver node');
-    //dpm($node);
-    $form['#prefix'] = $node->body['und'][0]['value'];
-    $form['waiver_name'] = array(
+  $node = node_load(arg(1)); // You have to set the node load to a variable.
+  if (empty($node)) {
+    return array();
+  }
+  //dpm('waiver node');
+  //dpm($node);
+  //$form['#prefix'] = $node->body['und'][0]['value'];
+  $form['first_name'] = array(
     '#type' => 'textfield',
     '#required' => TRUE,
-    '#title' => t("Your new Waiver name"),
-    '#description' => t('Must be a unique name'),
-    '#value' => t($node->title),
-    );
+    '#title' => t("first name"),
+  );
 
-      
+  $form['last_name'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => t("Last name"),
+  );
+
+
   $form['date'] = array(
     '#type' => 'date_popup',
-    '#title' => t('My Date'),
+    '#title' => t('Birth date'),
   );
-    // Waiver statement field
-    $form['statement'] = array(
+  // Waiver statement field
+  $form['gender'] = array(
     '#type' => 'textarea',
     '#required' => TRUE,
     '#title' => t("Your statement for the waiver"),
     '#description' => t('what your customer will sign about'),
-    );
-    
-    $form['signature'] = array(
+  );
+
+  $form['signature'] = array(
     '#title' => 'Signature',
     '#type' => 'signaturefield',
     '#color' => '#0f0',
     '#required' => TRUE,
-    );
+  );
 
-    $form['submit'] = array(
+  $form['submit'] = array(
     '#type' => 'submit',
     // #value is the text to display inside the button
     '#value' => t('Submit'),
-    );
+  );
 
   return $form;
 }
@@ -105,6 +107,3 @@ function waiver_form_new_waiver_form_validate($form, &$form_state) {
 function waiver_form_new_waiver_form_submit($form, &$form_state) {
   
 }
-
-
-  
