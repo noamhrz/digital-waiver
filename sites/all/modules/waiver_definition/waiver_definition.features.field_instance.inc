@@ -65,30 +65,30 @@ function waiver_definition_field_default_field_instances() {
   // Exported field_instance: 'node-waiver_definition-field_birth_date_row'
   $field_instances['node-waiver_definition-field_birth_date_row'] = array(
     'bundle' => 'waiver_definition',
-    'default_value' => array(
-      0 => array(
-        'value' => 3,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 10,
       ),
       'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
@@ -99,44 +99,48 @@ function waiver_definition_field_default_field_instances() {
     'label' => 'Birth date row',
     'required' => 0,
     'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'number',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 6,
+      'type' => 'number',
+      'weight' => 16,
     ),
   );
 
   // Exported field_instance: 'node-waiver_definition-field_first_name_row'
   $field_instances['node-waiver_definition-field_first_name_row'] = array(
     'bundle' => 'waiver_definition',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 8,
       ),
       'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
@@ -147,14 +151,18 @@ function waiver_definition_field_default_field_instances() {
     'label' => 'First name row',
     'required' => 0,
     'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'number',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
+      'type' => 'number',
+      'weight' => 14,
     ),
   );
 
@@ -208,30 +216,30 @@ function waiver_definition_field_default_field_instances() {
   // Exported field_instance: 'node-waiver_definition-field_free_field_1_row'
   $field_instances['node-waiver_definition-field_free_field_1_row'] = array(
     'bundle' => 'waiver_definition',
-    'default_value' => array(
-      0 => array(
-        'value' => 6,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 6,
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 13,
       ),
       'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
@@ -240,46 +248,50 @@ function waiver_definition_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_free_field_1_row',
     'label' => 'Free field 1 row',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'number',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 13,
+      'type' => 'number',
+      'weight' => 19,
     ),
   );
 
   // Exported field_instance: 'node-waiver_definition-field_gender_row'
   $field_instances['node-waiver_definition-field_gender_row'] = array(
     'bundle' => 'waiver_definition',
-    'default_value' => array(
-      0 => array(
-        'value' => 5,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 7,
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 12,
       ),
       'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 7,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
@@ -290,44 +302,48 @@ function waiver_definition_field_default_field_instances() {
     'label' => 'Gender row',
     'required' => 0,
     'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'number',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 10,
+      'type' => 'number',
+      'weight' => 18,
     ),
   );
 
   // Exported field_instance: 'node-waiver_definition-field_id_row'
   $field_instances['node-waiver_definition-field_id_row'] = array(
     'bundle' => 'waiver_definition',
-    'default_value' => array(
-      0 => array(
-        'value' => 4,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 11,
       ),
       'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
@@ -338,44 +354,48 @@ function waiver_definition_field_default_field_instances() {
     'label' => 'ID row',
     'required' => 0,
     'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'number',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 8,
+      'type' => 'number',
+      'weight' => 17,
     ),
   );
 
   // Exported field_instance: 'node-waiver_definition-field_last_name_row'
   $field_instances['node-waiver_definition-field_last_name_row'] = array(
     'bundle' => 'waiver_definition',
-    'default_value' => array(
-      0 => array(
-        'value' => 2,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 2,
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 9,
       ),
       'full' => array(
-        'label' => 'inline',
-        'module' => 'list',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
@@ -386,14 +406,18 @@ function waiver_definition_field_default_field_instances() {
     'label' => 'Last name row',
     'required' => 0,
     'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'number',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 4,
+      'type' => 'number',
+      'weight' => 15,
     ),
   );
 

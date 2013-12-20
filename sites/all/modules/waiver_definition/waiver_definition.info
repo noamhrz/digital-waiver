@@ -4,6 +4,7 @@ package = Features
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = list
+dependencies[] = number
 dependencies[] = options
 dependencies[] = page_manager
 dependencies[] = text
