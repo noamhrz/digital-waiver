@@ -5,3 +5,27 @@
  */
 
 include_once 'waiver_definition.features.inc';
+
+/**
+ * 
+ * @param type $node represent the waiver definition node
+ */
+function waiver_definition_order_array($node) {
+  $fields = array (
+    'field_first_name_row' => 1,
+    'field_last_name_row' => 2,
+    'field_birth_date_row' => 3,
+    'field_id_row' => 4,
+    'field_gender_row' => 5,
+    'field_free_field_1_row' => 6,  
+  );
+  $data = $node->data;
+  if (!empty($node->data->title)) {
+    foreach($fields as $key => $field) {
+      $fields[$key] = $data->{$key}['und'][0]['value'];
+    }
+    asort($fields);
+  }
+  
+  return $fields;
+}
