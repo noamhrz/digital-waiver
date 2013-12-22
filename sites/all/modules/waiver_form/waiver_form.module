@@ -40,35 +40,17 @@ function waiver_form_new_waiver_form($form, &$form_state) {
   if (empty($node)) {
     return array();
   }
-  //dpm('waiver node');
-  //dpm($node);
-  //$form['#prefix'] = $node->body['und'][0]['value'];
-  $form['first_name'] = array(
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => t("first name"),
-  );
 
-  $form['last_name'] = array( 
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => t("Last name"),
-  );
+  $fields = waiver_definition_order_array($node);
+  $form_fields = _waiver_form_fields_array();
 
+  foreach ($fields as $key => $field) {
+    // The name of the field will be the same name as the row field -  "_row"
+    // the key "field_gender_row" will be "field_gender"
+    $form[substr($key, 0, -4)] = $form_fields[$key];
+  }
 
-  $form['date'] = array(
-    '#type' => 'date_popup',
-    '#title' => t('Birth date'),
-  );
-  // Waiver statement field
-  $form['gender'] = array(
-    '#type' => 'textarea',
-    '#required' => TRUE,
-    '#title' => t("Your statement for the waiver"),
-    '#description' => t('what your customer will sign about'),
-  );
-
-  $form['signature'] = array(
+  $form['field_signature'] = array(
     '#title' => 'Signature',
     '#type' => 'signaturefield',
     '#color' => '#0f0',
@@ -84,19 +66,68 @@ function waiver_form_new_waiver_form($form, &$form_state) {
   return $form;
 }
 
+function _waiver_form_fields_array() {
+  $form_fields = array(
+    'field_first_name_row' => array(
+      '#type' => 'textfield',
+      '#required' => TRUE,
+      '#title' => t("First name"),
+    ),
+    'field_last_name_row' => array(
+      '#type' => 'textfield',
+      '#required' => TRUE,
+      '#title' => t("Last name"),
+    ),
+    'field_birth_date_row' => array(
+      '#type' => 'date_popup',
+      '#title' => t('Birth date'),
+    ),
+    'field_id_row' => array(
+      '#type' => 'textfield',
+      '#required' => TRUE,
+      '#title' => t("ID"),
+    ),
+    'field_gender_row' => array(
+      '#type' => 'radios',
+      '#title' => t('Gender'),
+      '#options' => array(t('Male'), t('Female')),
+    ),
+    'field_free_field_1_row' => array(
+      '#type' => 'textfield',
+      '#required' => TRUE,
+      '#title' => t("Free field"),
+    ),
+  );
+  return $form_fields;
+}
+
 /*
  * Define a validation function that drupal will
  * automatically call when the submit button is pressed.
  */
 
 function waiver_form_new_waiver_form_validate($form, &$form_state) {
-
-  $waiver_name = $form_state['values']['waiver_name'];
-
   // Check if the content type name is already exists.
   if (in_array('waiver_' . $waiver_name, node_type_get_names())) {
     form_set_error('waiver_name', $waiver_name . ' ' . t('Is already exists'));
   }
+}
+
+function my_create_a_node($values) {
+  $node = new stdClass(); // We create a new node object
+  $node->type = "waiver"; // Or any other content type you want
+  $node->title = "user Waiver";
+  $node->language = LANGUAGE_NONE; // Or any language code if Locale module is enabled. More on this below *
+//$node->path = array('alias' => 'your node path'); // Setting a node path
+  node_object_prepare($node); // Set some default values.
+  $node->uid = 1; // Or any id you wish
+  
+  foreach ($values as $key => $value) {
+    $node->{$key} = $value; 
+  }
+//  $node->field_first_name[$node->language][0]['value'] = 'This is a custom field value';
+  $node = node_submit($node); // Prepare node for a submit
+  node_save($node); // After this call we'll get a nid
 }
 
 /*
@@ -105,5 +136,24 @@ function waiver_form_new_waiver_form_validate($form, &$form_state) {
  */
 
 function waiver_form_new_waiver_form_submit($form, &$form_state) {
-  
+  dpm($form_state);
+  $node = node_load(arg(1));
+  $values_for_node = array();
+  $values_for_node['field_waiver_definition']['und'][0]['nid'] = $node->nid;
+  $values_for_node['field_signature']['und'][0]['data'] = $form_state['values']['field_signature'];
+//$form_state->values;
+  $standard = array(
+    'field_first_name' => '',
+    'field_last_name' => '',
+    'field_id' => '',
+    'field_birth_date' => '',
+    'field_gender' => '',
+    'field_free_field_1' => '',
+  );
+
+  foreach ($standard as $key => $value) {
+    $values_for_node[$key]['und'][0]['value'] = $form_state['values'][$key];
+  }
+
+  my_create_a_node($values_for_node);
 }
