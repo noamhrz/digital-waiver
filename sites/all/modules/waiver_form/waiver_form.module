@@ -62,6 +62,13 @@ function waiver_form_new_waiver_form($form, &$form_state) {
     // #value is the text to display inside the button
     '#value' => t('Submit'),
   );
+  
+  if (!empty($node->field_free_field_1_label['und'][0]['value'])) {
+    $form['field_free_field_1']['#title'] = $node->field_free_field_1_label['und'][0]['value'];
+  }
+  else {
+    unset($form['field_free_field_1']);
+  }
 
   return $form;
 }
@@ -71,33 +78,32 @@ function _waiver_form_fields_array() {
     'field_first_name_row' => array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => t("First name"),
     ),
     'field_last_name_row' => array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => t("Last name"),
     ),
     'field_birth_date_row' => array(
       '#type' => 'date_popup',
-      '#title' => t('Birth date'),
     ),
     'field_id_row' => array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => t("ID"),
     ),
     'field_gender_row' => array(
       '#type' => 'radios',
-      '#title' => t('Gender'),
       '#options' => array(t('Male'), t('Female')),
     ),
     'field_free_field_1_row' => array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => t("Free field"),
     ),
   );
+  
+  $names = waiver_definition_names_array();
+  foreach ($form_fields as $key => $value) {
+    $form_fields[$key]['#title'] = $names[$key];
+  }
   return $form_fields;
 }
 
@@ -108,36 +114,15 @@ function _waiver_form_fields_array() {
 
 function waiver_form_new_waiver_form_validate($form, &$form_state) {
   // Check if the content type name is already exists.
-  if (in_array('waiver_' . $waiver_name, node_type_get_names())) {
-    form_set_error('waiver_name', $waiver_name . ' ' . t('Is already exists'));
-  }
-}
-
-function my_create_a_node($values) {
-  $node = new stdClass(); // We create a new node object
-  $node->type = "waiver"; // Or any other content type you want
-  $node->title = "user Waiver";
-  $node->language = LANGUAGE_NONE; // Or any language code if Locale module is enabled. More on this below *
-//$node->path = array('alias' => 'your node path'); // Setting a node path
-  node_object_prepare($node); // Set some default values.
-  $node->uid = 1; // Or any id you wish
-  
-  foreach ($values as $key => $value) {
-    $node->{$key} = $value; 
-  }
-//  $node->field_first_name[$node->language][0]['value'] = 'This is a custom field value';
-  $node = node_submit($node); // Prepare node for a submit
-  node_save($node); // After this call we'll get a nid
 }
 
 /*
  * Define a submit funciton that drupal will
  * automatically call when submit is pressed (and all validators pass)
  */
-
 function waiver_form_new_waiver_form_submit($form, &$form_state) {
-  dpm($form_state);
   $node = node_load(arg(1));
+  $uid = $node->uid;
   $values_for_node = array();
   $values_for_node['field_waiver_definition']['und'][0]['nid'] = $node->nid;
   $values_for_node['field_signature']['und'][0]['data'] = $form_state['values']['field_signature'];
@@ -150,10 +135,31 @@ function waiver_form_new_waiver_form_submit($form, &$form_state) {
     'field_gender' => '',
     'field_free_field_1' => '',
   );
-
+  
+  $title = $node->nid . ' ';
   foreach ($standard as $key => $value) {
-    $values_for_node[$key]['und'][0]['value'] = $form_state['values'][$key];
+    if (isset($form_state['values'][$key])) {
+      $values_for_node[$key]['und'][0]['value'] = $form_state['values'][$key];
+      $title .= $form_state['values'][$key] . ' ';
+    }
   }
+  
+  _waiver_form_create_a_node($values_for_node, $uid, $title);
+}
 
-  my_create_a_node($values_for_node);
+function _waiver_form_create_a_node($values, $uid, $title) {
+  $node = new stdClass(); // We create a new node object
+  $node->type = "waiver"; // Or any other content type you want
+  $node->title = $title;
+  $node->language = LANGUAGE_NONE; // Or any language code if Locale module is enabled. More on this below *
+//$node->path = array('alias' => 'your node path'); // Setting a node path
+  node_object_prepare($node); // Set some default values.
+  $node->uid = $uid; // Or any id you wish
+  
+  foreach ($values as $key => $value) {
+    $node->{$key} = $value; 
+  }
+//  $node->field_first_name[$node->language][0]['value'] = 'This is a custom field value';
+  $node = node_submit($node); // Prepare node for a submit
+  node_save($node); // After this call we'll get a nid
 }

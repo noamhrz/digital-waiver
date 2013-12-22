@@ -29,3 +29,23 @@ function waiver_definition_order_array($node_data) {
   
   return $fields;
 }
+
+function waiver_definition_names_array() {
+  $fields = array (
+    'field_first_name_row' => t('First name'),
+    'field_last_name_row' => t('Last name'),
+    'field_birth_date_row' => t('Birth date'),
+    'field_id_row' => t('ID'),
+    'field_gender_row' => t('Gender'),
+    'field_free_field_1_row' => t('Free Field 1'),  
+  );
+  
+  if (!empty($node_data->title)) {
+    foreach($fields as $key => $field) {
+      $fields[$key] = $node_data->{$key}['und'][0]['value'];
+    }
+    asort($fields);
+  }
+  
+  return $fields;
+}
