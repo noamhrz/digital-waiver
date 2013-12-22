@@ -147,6 +147,46 @@ function waiver_definition_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-waiver-field_free_field_1'
+  $field_instances['node-waiver-field_free_field_1'] = array(
+    'bundle' => 'waiver',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_free_field_1',
+    'label' => 'Free field 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-waiver-field_gender'
   $field_instances['node-waiver-field_gender'] = array(
     'bundle' => 'waiver',
@@ -772,6 +812,7 @@ function waiver_definition_field_default_field_instances() {
   t('Body');
   t('First name');
   t('First name row');
+  t('Free field 1');
   t('Free field 1 label');
   t('Free field 1 row');
   t('Gender');
