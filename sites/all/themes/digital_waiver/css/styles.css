@@ -53,3 +53,7 @@ body {
 .ui-sortable-placeholder * { 
     visibility: hidden; 
 }
+
+.hidden {
+    display: none;
+}
