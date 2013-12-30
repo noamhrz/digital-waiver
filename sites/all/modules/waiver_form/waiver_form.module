@@ -25,8 +25,8 @@ function waiver_form_block_view($delta = '') {
 }
 
 function waiver_form_form_alter(&$form, &$form_state, $form_id) {
-  //dpm($form_id);  // print form ID to messages
-  //dpm($form);  // pretty print array using Krumo to messages
+//  dpm($form_id);  // print form ID to messages
+//  dpm($form);  // pretty print array using Krumo to messages
 }
 
 /**
@@ -35,8 +35,13 @@ function waiver_form_form_alter(&$form, &$form_state, $form_id) {
 function waiver_form_new_waiver_form($form, &$form_state) {
   // Waiver name field.
   // TODO make this field appear only if the context is empty.
-
-  $node = node_load(arg(1)); // You have to set the node load to a variable.
+  $node = null;
+  if(isset($form_state['build_info']['args'][0])) {
+    $node = $form_state['build_info']['args'][0];
+  }
+  else {
+    $node = node_load(arg(1)); // You have to set the node load to a variable.
+  }
   if (empty($node)) {
     return array();
   }

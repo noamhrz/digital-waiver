@@ -34,10 +34,16 @@ function digital_waiver_preprocess_waiver_form_new_waiver_form(&$variables) {
 //  dpm($variables);
 }
 
-function digital_waiver_preprocess_waiver_definition_node_form(&$variables) {
+function digital_waiver_node_preview(&$variables) {
   /* Add or modify your variables */
-//  dpm('waiver_form_preprocess');
+//  dpm('node preview');
 //  dpm($variables);
+  $node = $variables['node']; // You have to set the node load to a variable.
+  if (empty($node)) {
+    return "";
+  }
+
+  return  drupal_render(drupal_get_form('waiver_form_new_waiver_form', $node));
 }
 
 /**
