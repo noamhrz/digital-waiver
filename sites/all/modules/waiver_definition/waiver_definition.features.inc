@@ -33,10 +33,10 @@ function waiver_definition_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'waiver_definition' => array(
-      'name' => t('Waiver definition'),
+    'waiver_form' => array(
+      'name' => t('Waiver form'),
       'base' => 'node_content',
-      'description' => t('The definitions of the waiver'),
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
