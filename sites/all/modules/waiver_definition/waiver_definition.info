@@ -42,6 +42,7 @@ features[node][] = waiver_form
 features[page_manager_handlers][] = node_edit_panel_context
 features[page_manager_handlers][] = node_edit_panel_context_2
 features[page_manager_handlers][] = node_view_panel_context
+features[page_manager_handlers][] = node_view_panel_context_2
 features[page_manager_pages][] = my_waivers
 features[page_manager_pages][] = sign_waiver
 features_exclude[field_base][field_free_field_1] = field_free_field_1
