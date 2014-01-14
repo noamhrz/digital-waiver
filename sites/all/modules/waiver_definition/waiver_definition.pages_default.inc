@@ -790,6 +790,30 @@ function waiver_definition_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-22'] = $pane;
     $display->panels['main'][0] = 'new-22';
+    $pane = new stdClass();
+    $pane->pid = 'new-23';
+    $pane->panel = 'main';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Next',
+      'title' => '',
+      'body' => '<a href="<?php print base_path( )?>sign-waiver/%node:nid">Next</a>',
+      'format' => 'php_code',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-23'] = $pane;
+    $display->panels['main'][1] = 'new-23';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-22';
   $handler->conf['display'] = $display;
@@ -957,7 +981,7 @@ function waiver_definition_default_page_manager_pages() {
         'name' => 'node_type',
         'settings' => array(
           'type' => array(
-            'waiver_definition' => 'waiver_definition',
+            'waiver_form' => 'waiver_form',
           ),
         ),
         'context' => 'argument_entity_id:node_1',
@@ -1020,7 +1044,7 @@ function waiver_definition_default_page_manager_pages() {
     $pane->pid = 'new-3';
     $pane->panel = 'main';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:body';
+    $pane->subtype = 'node:field_waiver_form_json';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1031,7 +1055,7 @@ function waiver_definition_default_page_manager_pages() {
       'delta_reversed' => FALSE,
       'formatter_settings' => array(),
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -1048,12 +1072,12 @@ function waiver_definition_default_page_manager_pages() {
     $pane->pid = 'new-4';
     $pane->panel = 'main';
     $pane->type = 'block';
-    $pane->subtype = 'waiver_form-waiver';
+    $pane->subtype = 'waiver_dnd_ui-waiver';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Take responsibility for your action',
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
