@@ -50,7 +50,7 @@ function waiver_definition_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 1,
     ),
   );
 
@@ -103,7 +103,47 @@ function waiver_definition_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 1,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-waiver-field_custom_fields'
+  $field_instances['node-waiver-field_custom_fields'] = array(
+    'bundle' => 'waiver',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_custom_fields',
+    'label' => 'custom_fields',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 9,
     ),
   );
 
@@ -143,47 +183,7 @@ function waiver_definition_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -2,
-    ),
-  );
-
-  // Exported field_instance: 'node-waiver-field_free_field_1'
-  $field_instances['node-waiver-field_free_field_1'] = array(
-    'bundle' => 'waiver',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_free_field_1',
-    'label' => 'Free field 1',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -224,7 +224,7 @@ function waiver_definition_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 7,
     ),
   );
 
@@ -264,7 +264,7 @@ function waiver_definition_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 0,
+      'weight' => 5,
     ),
   );
 
@@ -304,7 +304,7 @@ function waiver_definition_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -1,
+      'weight' => 4,
     ),
   );
 
@@ -349,7 +349,7 @@ function waiver_definition_field_default_field_instances() {
         'width' => '',
       ),
       'type' => 'signaturefield_default',
-      'weight' => 3,
+      'weight' => 8,
     ),
   );
 
@@ -390,7 +390,7 @@ function waiver_definition_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => -3,
+      'weight' => 2,
     ),
   );
 
@@ -438,7 +438,6 @@ function waiver_definition_field_default_field_instances() {
   t('Birth date');
   t('Body');
   t('First name');
-  t('Free field 1');
   t('Gender');
   t('ID');
   t('Last name');
@@ -446,6 +445,7 @@ function waiver_definition_field_default_field_instances() {
   t('The waiver statement and defenitions');
   t('Waiver definition');
   t('Waiver form json');
+  t('custom_fields');
 
   return $field_instances;
 }

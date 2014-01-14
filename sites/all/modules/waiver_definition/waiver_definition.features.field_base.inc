@@ -69,6 +69,35 @@ function waiver_definition_field_default_field_bases() {
     'type' => 'datetime',
   );
 
+  // Exported field_base: 'field_custom_fields'
+  $field_bases['field_custom_fields'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_custom_fields',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_first_name'
   $field_bases['field_first_name'] = array(
     'active' => 1,
@@ -255,7 +284,8 @@ function waiver_definition_field_default_field_bases() {
         'page' => 0,
         'panel' => 0,
         'waiver' => 0,
-        'waiver_definition' => 'waiver_definition',
+        'waiver_definition' => 0,
+        'waiver_form' => 'waiver_form',
       ),
       'view' => array(
         'args' => array(),

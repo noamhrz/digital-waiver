@@ -151,3 +151,7 @@ body {
 #waiver-dnd-ui-waiver-form .form-item {
     margin-botoom: 40px;
 }
+
+#edit-field-waiver-form-json {
+    display: none;
+}
