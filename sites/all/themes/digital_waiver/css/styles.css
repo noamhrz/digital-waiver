@@ -136,3 +136,18 @@ body {
 .option-col .custom-option-form {
     display: none;
 }
+
+#waiver-dnd-ui-waiver-form .form-checkboxes .form-type-checkbox,
+#waiver-dnd-ui-waiver-form .form-radios .form-type-radio {
+    float: left;
+    margin: 0 20px;
+}
+
+#waiver-dnd-ui-waiver-form .form-checkboxes ,
+#waiver-dnd-ui-waiver-form .form-radios {
+    clear: both;
+}
+
+#waiver-dnd-ui-waiver-form .form-item {
+    margin-botoom: 40px;
+}

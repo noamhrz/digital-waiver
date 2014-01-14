@@ -46,9 +46,6 @@ function waiver_form_new_waiver_form($form, &$form_state) {
     return array();
   }
 
-  $fields = waiver_definition_order_array($node);
-  $form_fields = _waiver_form_fields_array();
-
   foreach ($fields as $key => $field) {
     // The name of the field will be the same name as the row field -  "_row"
     // the key "field_gender_row" will be "field_gender"
