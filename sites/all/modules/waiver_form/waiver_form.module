@@ -147,6 +147,8 @@ function waiver_form_new_waiver_form_submit($form, &$form_state) {
   }
   
   _waiver_form_create_a_node($values_for_node, $uid, $title);
+  
+
 }
 
 function _waiver_form_create_a_node($values, $uid, $title) {
